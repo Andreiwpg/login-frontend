@@ -1,94 +1,133 @@
-/* Reset simples */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body centralizado e fonte agradável */
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f2f2f2;
-}
-
-/* Cartão de login */
-.login-card {
-  background-color: #fff;
+/* Container principal do login */
+.login-container {
+  background: #fff;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 90%;
-  max-width: 400px;
-}
-
-/* Inputs e labels */
-label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
-input {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.25rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  max-width: 380px;
+  margin: 3rem auto;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Checkbox e link na mesma linha */
+/* Títulos */
+.login-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #111827;
+}
+
+/* Form rows */
 .form-row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
+  flex-direction: column;
+  margin-bottom: 14px;
 }
 
-/* Botão */
-button {
-  margin-top: 1.5rem;
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/* Labels */
+.form-row label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 4px;
 }
 
-button:disabled {
-  background-color: #aaa;
-  cursor: not-allowed;
+/* Inputs */
+.form-row input[type="email"],
+.form-row input[type="password"] {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-row input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79,70,229,0.2);
+}
+
+input::placeholder {
+  color: #9ca3af;
 }
 
 /* Mensagens de erro */
 .error-message {
-  color: red;
-  font-size: 0.9rem;
-  margin-top: 0.25rem;
-}
-/* Estado de foco nos inputs */
-input:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0 0 3px #007bff;
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  height: 1em;
 }
 
-/* Input inválido */
-input.invalid {
-  border-color: red;
+/* Link "Esqueci minha senha" */
+.forgot {
+  display: block;
+  margin: 6px 0 14px;
+  font-size: 0.85rem;
+  text-align: right;
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-/* Mensagem de sucesso */
-#status.success {
-  color: green;
+.forgot:hover {
+  color: #3730a3;
+  text-decoration: underline;
 }
 
-/* Mensagem de erro */
-#status.error {
-  color: red;
+.forgot:visited {
+  color: #4f46e5;
+}
+
+/* Checkbox Lembrar-me */
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.remember-me span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+
+/* Botão Entrar */
+button[type="submit"] {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #3730a3;
+  transform: translateY(-1px);
+}
+
+/* Media query para responsividade */
+@media (max-width: 480px) {
+  .forgot {
+    text-align: center;
+  }
+  .remember-me {
+    justify-content: flex-start;
+  }
 }
